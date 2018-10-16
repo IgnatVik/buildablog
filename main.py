@@ -39,16 +39,13 @@ class Entry(db.Model):
 @app.route("/")
 def index():
     '''
-    Convenience route so the bare URL displays all the entries
+    Convenience route
     '''
     return redirect("/blog")
 #
 @app.route("/blog")
 def display_blog_entries():
-    '''
-    Either list one entry with the given ID
-    Or list all blog entries (in default or newest order)
-    '''
+    
     entry_id = request.args.get('id')
     if (entry_id):
         entry = Entry.query.get(entry_id)
@@ -62,8 +59,8 @@ def display_blog_entries():
 @app.route('/new_entry', methods=['GET', 'POST'])
 def new_entry():
     '''
-    GET: Display form for new blog entry
-    POST: create new entry or redisplay form if values are invalid
+    Display form for new blog entry
+    Create new entry or redisplay form if values are invalid
     '''
     if request.method == 'POST':
         new_entry_title = request.form['title']
@@ -78,7 +75,7 @@ def new_entry():
             url = "/blog?id=" + str(new_entry.id)
             return redirect(url)
         else:
-            flash("Please check your entry for errors. Both a title and a body are required.")
+            flash("Error. Both a title and a body are required.")
             return render_template('new_entry_form.html',
                 title="Create new blog entry",
                 new_entry_title=new_entry_title,
@@ -86,6 +83,6 @@ def new_entry():
 
     else: # GET request
         return render_template('new_entry_form.html', title="Create new blog entry")
-#
+
 if __name__ == '__main__':
     app.run()

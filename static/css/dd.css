@@ -1,0 +1,109 @@
+body {
+  font-family: 'Open Sans', 'Times New Roman', Times, serif;
+  font-size: 100%;
+  background-color: #cccccc;
+  width:100%;
+  
+}
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+li {
+ list-style: none;
+}
+
+.container {
+    margin-left: 5rem;
+    width: 100%;
+    text-align: center;
+}
+    
+
+input {
+    display: block;
+    font-size: 100%;
+    margin:auto;
+    
+    
+}
+
+textarea {
+    display: block;
+    font-size: 100%;
+    margin:auto;
+   
+}
+
+#submit_button {
+    background-color: gray;
+    border-radius:2px;
+    border:none;
+    color: black;
+    cursor: pointer;
+    padding: .5em;
+    margin:auto;
+
+}
+
+#submit_button:hover {
+    background:white;
+    box-shadow: 0px 5px 5px #777;
+    left: -5px;
+    position: relative;
+    top: -5px;
+    margin:auto;
+
+}
+
+.flash_message {
+    background-color: MistyRose;
+    border-radius: 2px;
+    color: red;
+    margin: .25rem;
+    padding: 2rem;
+}
+.dropbtn {
+    background-color: #2f00ff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: blue;}
+

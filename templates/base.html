@@ -2,19 +2,23 @@
 <html>
     <head>
         <title>{{title}}</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/hi.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dd.css') }}">
     </head>
 <body>
-    <!-- main element is a flexbox  -->
     <main>
-        <nav>
-            <a href='/blog'>All entries<br />(oldest-first)</a>
-            <a href='/blog?sort=newest'>All Entries<br />(newest-first)</a>
-            <a href='/new_entry'>Create new entry</a>
-        </nav>
+             <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                    <a href="/blog">All Entries<br />(old to new)</a>
+                    <a href="/blog?sort=newest">All Entries<br />(new to old)</a>
+                    <a href="/new_entry">Create new Entry</a>
+                </div>
+             </div>
+        
 
         <div class="container">
-            <!-- No message categories  -->
+            
+            
             {% with messages = get_flashed_messages() %}
                 {% for message in messages %}
                     <div class="flash_message">{{message|safe}}</div>
@@ -24,7 +28,7 @@
             {% block content %}
             {% endblock %}
 
-        </div> <!-- .container -->
+        </div> 
     </main>
 
 </body>
